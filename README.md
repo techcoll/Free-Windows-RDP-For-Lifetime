@@ -1,3 +1,17 @@
+# Free Windows Server 2022 With RDP For Lifetime
+This repository is all about getting free windows server  with rdp using github jobs & ngrok tunnel. 
+
+## Watch Full Video Guide on My YouTube Channel
+
+[![alt text]([https://www.youtube.com/@cybertech-arena])](https://www.youtube.com/@cybertech-arena)
+
+## Steps To Create Windows Server
+* Sign Up a GitHub Account : https://github.com/
+* Create a Private Repository, Go to repository settings > Secrets and variables > Actions > New Repository Secrets
+* Sign Up a Ngrok Account : https://ngrok.com/
+* Copy the auth key from ngrok and add to github repository secrets
+* Setup New Workflow Manually the Put the following code in main.yml and commit changes 
+```
 name: CI
 
 on: [push, workflow_dispatch]
@@ -23,3 +37,9 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
+
+```
+* Run The WorkFlow and take note of credentials (runneradmin:P@ssw0rd!)
+* Get the ngrok endpoint url and use it as ip or address in Remote Desktop Connection with credentials
+
+
